@@ -7,7 +7,7 @@ const SITE_LANG = "zh_CN";
 
 export const siteConfig: SiteConfig = {
 	// 站点标题
-	title: "halfman的考研笔记",
+	title: "halfman的破站",
 
 	// 站点副标题
 	subtitle: "考研复习笔记 · 知识整理",
