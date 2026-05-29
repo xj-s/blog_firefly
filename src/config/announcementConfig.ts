@@ -4,8 +4,8 @@ export const announcementConfig: AnnouncementConfig = {
 	// 公告标题
 	title: "考研倒计时",
 
-	// 公告内容
-	content: "距离2027年考研还有约 570+ 天，加油！",
+	// 公告内容（留空，使用动态倒计时）
+	content: "",
 
 	// 是否允许用户关闭公告
 	closable: true,

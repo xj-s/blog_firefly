@@ -7,6 +7,9 @@ import { i18n } from "@/i18n/translation";
 
 const config = announcementConfig;
 
+// 考研日期：2026年12月（通常是12月最后一个周末）
+const examDate = new Date("2026-12-26T00:00:00+08:00");
+
 interface Props {
 	class?: string;
 	style?: string;
@@ -23,9 +26,17 @@ const style = Astro.props.style;
   style={style}
 >
   <div>
-    <!-- 公告栏内容 -->
+    <!-- 公告栏内容 - 考研倒计时 -->
     <div class="text-neutral-600 dark:text-neutral-300 leading-relaxed mb-3">
-      {config.content}
+      <div id="countdown-display" class="text-center">
+        <div class="text-2xl font-bold text-[var(--primary)] mb-2">
+          <span id="countdown-days">--</span>
+          <span class="text-sm font-normal ml-1">天</span>
+        </div>
+        <div class="text-xs text-neutral-500 dark:text-neutral-400">
+          距离2027年考研还有
+        </div>
+      </div>
     </div>
 
     <!-- 可选链接和关闭按钮 -->
@@ -59,3 +70,27 @@ const style = Astro.props.style;
     </div>
   </div>
 </WidgetLayout>
+
+<script is:inline define:vars={{ examDate: examDate.toISOString() }}>
+  function updateCountdown() {
+    const now = new Date();
+    const exam = new Date(examDate);
+    const diff = exam.getTime() - now.getTime();
+
+    if (diff <= 0) {
+      document.getElementById("countdown-days").textContent = "0";
+      document.querySelector("#countdown-display .text-xs").textContent =
+        "考研已结束";
+      return;
+    }
+
+    const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+    document.getElementById("countdown-days").textContent = days;
+  }
+
+  // 立即更新
+  updateCountdown();
+
+  // 每分钟更新一次
+  setInterval(updateCountdown, 60000);
+</script>
