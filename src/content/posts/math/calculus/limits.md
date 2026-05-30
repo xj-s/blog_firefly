@@ -1,10 +1,13 @@
 ---
-title: "第一章 函数与极限"
+title: 第一章 函数与极限
 published: 2026-05-28
-description: "高等数学第一章笔记，包括函数极限的定义、性质、计算方法及连续性"
+description: 高等数学第一章笔记，包括函数极限的定义、性质、计算方法及连续性
 image: ""
-tags: ["高等数学", "极限", "连续性"]
-category: "数学/高等数学"
+tags:
+  - 高等数学
+  - 极限
+  - 连续性
+category: 数学/高等数学
 draft: false
 pinned: false
 ---
