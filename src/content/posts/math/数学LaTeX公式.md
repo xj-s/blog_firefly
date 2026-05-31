@@ -1,7 +1,7 @@
 ---
 title: "数学LaTeX公式速查手册"
 published: 2026-05-29
-description: "考研数学常用LaTeX公式符号速查，包括微积分、线性代数、概率论等"
+description: "考研数学常用LaTeX公式符号速查，包括微积分、线性代数等"
 tags: ["LaTeX", "公式", "速查", "考研数学"]
 category: "数学"
 draft: false
@@ -22,9 +22,11 @@ pinned: false
 | 无穷 | `\infty` | $\infty$ |
 | 点乘 | `\cdot` | $\cdot$ |
 | 叉乘 | `\times` | $\times$ |
-| 星号 | `\ast` | $\ast$ |
 | 正负 | `\pm` | $\pm$ |
 | 负正 | `\mp` | $\mp$ |
+| 恒等于 | `\equiv` | $\equiv$ |
+| 远大于 | `\gg` | $\gg$ |
+| 远小于 | `\ll` | $\ll$ |
 
 ---
 
@@ -69,7 +71,6 @@ pinned: false
 | 并集 | `\cup` | $\cup$ |
 | 交集 | `\cap` | $\cap$ |
 | 空集 | `\emptyset` | $\emptyset$ |
-| 全集 | `\mathbb{R}` | $\mathbb{R}$ |
 | 实数集 | `\mathbb{R}` | $\mathbb{R}$ |
 | 整数集 | `\mathbb{Z}` | $\mathbb{Z}$ |
 | 自然数集 | `\mathbb{N}` | $\mathbb{N}$ |
@@ -206,67 +207,9 @@ $$
 
 ---
 
-## 八、概率论
+## 八、常见公式
 
-### 8.1 概率符号
-
-| 符号 | LaTeX | 示例 |
-|------|-------|------|
-| 概率 | `P(A)` | $P(A)$ |
-| 条件概率 | `P(A \mid B)` | $P(A \mid B)$ |
-| 联合概率 | `P(AB)` | $P(AB)$ |
-| 全概率 | `P(A) = \sum_{i=1}^n P(B_i)P(A \mid B_i)` | $P(A) = \sum_{i=1}^n P(B_i)P(A \mid B_i)$ |
-| 贝叶斯 | `P(B_i \mid A) = \frac{P(B_i)P(A \mid B_i)}{\sum_{j=1}^n P(B_j)P(A \mid B_j)}` | $P(B_i \mid A) = \frac{P(B_i)P(A \mid B_i)}{\sum_{j=1}^n P(B_j)P(A \mid B_j)}$ |
-
-### 8.2 随机变量
-
-| 符号 | LaTeX | 示例 |
-|------|-------|------|
-| 期望 | `E(X)` | $E(X)$ |
-| 方差 | `D(X)` | $D(X)$ |
-| 标准差 | `\sigma` | $\sigma$ |
-| 协方差 | `\text{Cov}(X,Y)` | $\text{Cov}(X,Y)$ |
-| 相关系数 | `\rho_{XY}` | $\rho_{XY}$ |
-
-### 8.3 常见分布
-
-二项分布 $X \sim B(n,p)$：
-```latex
-P(X=k) = C_n^k p^k (1-p)^{n-k}, \quad k=0,1,\dots,n
-```
-$$
-P(X=k) = C_n^k p^k (1-p)^{n-k}, \quad k=0,1,\dots,n
-$$
-
-正态分布 $X \sim N(\mu,\sigma^2)$：
-```latex
-f(x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
-```
-$$
-f(x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
-$$
-
-泊松分布 $X \sim P(\lambda)$：
-```latex
-P(X=k) = \frac{\lambda^k e^{-\lambda}}{k!}, \quad k=0,1,2,\dots
-```
-$$
-P(X=k) = \frac{\lambda^k e^{-\lambda}}{k!}, \quad k=0,1,2,\dots
-$$
-
-指数分布 $X \sim E(\lambda)$：
-```latex
-f(x) = \begin{cases} \lambda e^{-\lambda x}, & x > 0 \\ 0, & x \leq 0 \end{cases}
-```
-$$
-f(x) = \begin{cases} \lambda e^{-\lambda x}, & x > 0 \\ 0, & x \leq 0 \end{cases}
-$$
-
----
-
-## 九、常见公式
-
-### 9.1 极限公式
+### 8.1 极限公式
 
 两个重要极限：
 ```latex
@@ -283,7 +226,7 @@ $$
 \lim_{x \to \infty} \left(1 + \frac{1}{x}\right)^x = e
 $$
 
-### 9.2 洛必达法则
+### 8.2 洛必达法则
 
 ```latex
 \lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}
@@ -292,7 +235,7 @@ $$
 \lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}
 $$
 
-### 9.3 泰勒展开
+### 8.3 泰勒展开
 
 ```latex
 e^x = \sum_{n=0}^\infty \frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots
@@ -329,7 +272,7 @@ $$
 \frac{1}{1-x} = \sum_{n=0}^\infty x^n = 1 + x + x^2 + x^3 + \cdots, \quad |x| < 1
 $$
 
-### 9.4 积分公式
+### 8.4 积分公式
 
 ```latex
 \int x^n dx = \frac{x^{n+1}}{n+1} + C, \quad n \neq -1
@@ -387,7 +330,7 @@ $$
 \int \frac{1}{\sqrt{a^2 - x^2}} dx = \arcsin\frac{x}{a} + C
 $$
 
-### 9.5 欧拉公式
+### 8.5 欧拉公式
 
 ```latex
 e^{ix} = \cos x + i\sin x
@@ -405,9 +348,144 @@ $$
 
 ---
 
-## 十、使用技巧
+## 九、常用写法
 
-### 10.1 LaTeX Suite 快捷输入
+### 9.1 括号
+
+| 写法 | LaTeX | 效果 |
+|------|-------|------|
+| 小括号 | `(a+b)` | $(a+b)$ |
+| 中括号 | `[a+b]` | $[a+b]$ |
+| 大括号 | `\{a+b\}` | $\{a+b\}$ |
+| 自动括号 | `\left(\frac{a}{b}\right)` | $\left(\frac{a}{b}\right)$ |
+| 自动方括号 | `\left[\frac{a}{b}\right]` | $\left[\frac{a}{b}\right]$ |
+| 自动花括号 | `\left\{\frac{a}{b}\right\}` | $\left\{\frac{a}{b}\right\}$ |
+| 绝对值 | `\|x\|` | $\|x\|$ |
+| 范数 | `\|\vec{v}\|` | $\|\vec{v}\|$ |
+
+### 9.2 箭头
+
+| 写法 | LaTeX | 效果 |
+|------|-------|------|
+| 右箭头 | `\to` | $\to$ |
+| 左箭头 | `\leftarrow` | $\leftarrow$ |
+| 双向箭头 | `\leftrightarrow` | $\leftrightarrow$ |
+| 推出 | `\Rightarrow` | $\Rightarrow$ |
+| 等价 | `\Leftrightarrow` | $\Leftrightarrow$ |
+| 趋于 | `\rightarrow` | $\rightarrow$ |
+
+### 9.3 空格
+
+| 写法 | LaTeX | 效果 |
+|------|-------|------|
+| 小空格 | `a\,b` | $a\,b$ |
+| 中空格 | `a\;b` | $a\;b$ |
+| 大空格 | `a\quad b` | $a\quad b$ |
+| 超大空格 | `a\qquad b` | $a\qquad b$ |
+
+### 9.4 文字
+
+| 写法 | LaTeX | 效果 |
+|------|-------|------|
+| 正体 | `\text{abc}` | $\text{abc}$ |
+| 粗体 | `\mathbf{v}` | $\mathbf{v}$ |
+| 花体 | `\mathcal{L}` | $\mathcal{L}$ |
+| 黑板粗体 | `\mathbb{R}` | $\mathbb{R}$ |
+
+### 9.5 分段函数
+
+```latex
+f(x) = \begin{cases} 
+x^2, & x > 0 \\
+0, & x = 0 \\
+-x, & x < 0 
+\end{cases}
+```
+$$
+f(x) = \begin{cases} 
+x^2, & x > 0 \\
+0, & x = 0 \\
+-x, & x < 0 
+\end{cases}
+$$
+
+### 9.6 多行公式对齐
+
+```latex
+\begin{aligned}
+(a+b)^2 &= a^2 + 2ab + b^2 \\
+(a-b)^2 &= a^2 - 2ab + b^2 \\
+a^2 - b^2 &= (a+b)(a-b)
+\end{aligned}
+```
+$$
+\begin{aligned}
+(a+b)^2 &= a^2 + 2ab + b^2 \\
+(a-b)^2 &= a^2 - 2ab + b^2 \\
+a^2 - b^2 &= (a+b)(a-b)
+\end{aligned}
+$$
+
+### 9.7 方程组
+
+```latex
+\begin{cases}
+x + y = 5 \\
+2x - y = 1
+\end{cases}
+```
+$$
+\begin{cases}
+x + y = 5 \\
+2x - y = 1
+\end{cases}
+$$
+
+### 9.8 上下标组合
+
+| 写法 | LaTeX | 效果 |
+|------|-------|------|
+| 上标 | `x^2` | $x^2$ |
+| 下标 | `x_i` | $x_i$ |
+| 多字符上标 | `x^{n+1}` | $x^{n+1}$ |
+| 多字符下标 | `x_{i+1}` | $x_{i+1}$ |
+| 上下都有 | `x_i^2` | $x_i^2$ |
+| 导数 | `f'(x)` | $f'(x)$ |
+| 二阶导 | `f''(x)` | $f''(x)$ |
+
+### 9.9 常见等式
+
+```latex
+a^2 - b^2 = (a+b)(a-b)
+```
+$$
+a^2 - b^2 = (a+b)(a-b)
+$$
+
+```latex
+(a+b)^n = \sum_{k=0}^n C_n^k a^{n-k} b^k
+```
+$$
+(a+b)^n = \sum_{k=0}^n C_n^k a^{n-k} b^k
+$$
+
+```latex
+\sin^2 x + \cos^2 x = 1
+```
+$$
+\sin^2 x + \cos^2 x = 1
+$$
+
+```latex
+\sec^2 x = 1 + \tan^2 x
+```
+$$
+\sec^2 x = 1 + \tan^2 x
+$$
+
+---
+
+## 十、LaTeX Suite 快捷输入
 
 | 输入 | 替换为 | 效果 |
 |------|--------|------|
@@ -431,55 +509,6 @@ $$
 | `RR` | `\mathbb{R}` | 实数集 |
 | `ZZ` | `\mathbb{Z}` | 整数集 |
 | `NN` | `\mathbb{N}` | 自然数集 |
-
-### 10.2 分段函数
-
-```latex
-f(x) = \begin{cases} 
-x^2, & x > 0 \\
-0, & x = 0 \\
--x, & x < 0 
-\end{cases}
-```
-$$
-f(x) = \begin{cases} 
-x^2, & x > 0 \\
-0, & x = 0 \\
--x, & x < 0 
-\end{cases}
-$$
-
-### 10.3 多行公式对齐
-
-```latex
-\begin{aligned}
-(a+b)^2 &= a^2 + 2ab + b^2 \\
-(a-b)^2 &= a^2 - 2ab + b^2 \\
-a^2 - b^2 &= (a+b)(a-b)
-\end{aligned}
-```
-$$
-\begin{aligned}
-(a+b)^2 &= a^2 + 2ab + b^2 \\
-(a-b)^2 &= a^2 - 2ab + b^2 \\
-a^2 - b^2 &= (a+b)(a-b)
-\end{aligned}
-$$
-
-### 10.4 方程组
-
-```latex
-\begin{cases}
-x + y = 5 \\
-2x - y = 1
-\end{cases}
-```
-$$
-\begin{cases}
-x + y = 5 \\
-2x - y = 1
-\end{cases}
-$$
 
 ---
 
