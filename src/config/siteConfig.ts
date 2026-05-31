@@ -13,7 +13,7 @@ export const siteConfig: SiteConfig = {
 	subtitle: "考研复习笔记 · 知识整理",
 
 	// 站点 URL
-	site_url: "https://xj-s.github.io/blog_firefly/",
+	site_url: "https://halfman.top/",
 
 	// 站点描述
 	description:
