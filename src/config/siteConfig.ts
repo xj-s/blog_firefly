@@ -59,10 +59,17 @@ export const siteConfig: SiteConfig = {
 		{
 			// 图标文件路径
 			src: "/favicon/favicon.ico",
-			// 可选，指定主题 'light' | 'dark'
-			// theme: "light",
-			// 可选，图标大小
-			// sizes: "32x32",
+			sizes: "32x32",
+		},
+		{
+			src: "/favicon/favicon-dark-192.png",
+			sizes: "192x192",
+			theme: "dark",
+		},
+		{
+			src: "/favicon/favicon-light-192.png",
+			sizes: "192x192",
+			theme: "light",
 		},
 	],
 
