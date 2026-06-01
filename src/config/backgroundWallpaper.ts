@@ -41,10 +41,8 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 		// 桌面背景图片（支持单张或多张随机）
 		// desktop: "assets/images/DesktopWallpaper/d1.avif",
 		desktop: [
-			"assets/images/DesktopWallpaper/1.webp",
-			"assets/images/DesktopWallpaper/2.webp",
-			"assets/images/DesktopWallpaper/3.webp",
-			"assets/images/DesktopWallpaper/4.webp",
+			"assets/images/DesktopWallpaper/1.jpg",
+			"assets/images/DesktopWallpaper/2.png",
 		],
 		// 移动背景图片（支持单张或多张随机）
 		// mobile: "assets/images/MobileWallpaper/m1.avif",
@@ -52,7 +50,7 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			"assets/images/MobileWallpaper/1.jpg",
 			"assets/images/MobileWallpaper/2.jpg",
 			"assets/images/MobileWallpaper/3.webp",
-			"assets/images/MobileWallpaper/4.png",
+			"assets/images/MobileWallpaper/4.jpg",
 		],
 	},
 	// 横幅壁纸和全屏壁纸共享配置
