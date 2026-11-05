@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-05T11:38:40+00:00",
+  "wordCount": 5763,
+  "syllabusCount": 5522,
+  "examWordCount": 3851,
+  "examSentenceCount": 3402,
+  "examYears": [
+    2010,
+    2026
+  ],
+  "shards": {
+    "a": 388,
+    "b": 286,
+    "c": 591,
+    "d": 352,
+    "e": 293,
+    "f": 273,
+    "g": 159,
+    "h": 196,
+    "i": 244,
+    "j": 43,
+    "k": 32,
+    "l": 193,
+    "m": 272,
+    "n": 120,
+    "o": 158,
+    "p": 463,
+    "q": 30,
+    "r": 323,
+    "s": 676,
+    "t": 311,
+    "u": 70,
+    "v": 101,
+    "w": 161,
+    "x": 1,
+    "y": 18,
+    "z": 9
+  },
+  "sources": [
+    {
+      "name": "NETEMVocabulary",
+      "url": "https://github.com/exam-data/NETEMVocabulary",
+      "license": "CC BY-NC-SA 4.0",
+      "use": "考研大纲 5530 词、词频、CMU 分类、CEFR、部分真题例句"
+    },
+    {
+      "name": "KyleBing/english-vocabulary",
+      "url": "https://github.com/KyleBing/english-vocabulary",
+      "license": "学习用途（原库未声明标准开源协议）",
+      "use": "释义、词组、同近义、同根词、记忆法、例句"
+    },
+    {
+      "name": "ECDICT lemma / ipa-dict",
+      "url": "https://github.com/skywind3000/ECDICT",
+      "license": "MIT",
+      "use": "词形还原与音标兜底"
+    },
+    {
+      "name": "2010-2026 考研英语（一/二）真题",
+      "url": "https://github.com/Fantasia1999/kaoyanzhenti",
+      "license": "仅供个人学习研究",
+      "use": "真题例句（按句摘录，标注年份/题型）"
+    }
+  ],
+  "notice": "本数据集为个人学习用途，不包含红宝书、词汇闪过等版权书籍的原文；栏目结构参考其常见编排方式。"
+}

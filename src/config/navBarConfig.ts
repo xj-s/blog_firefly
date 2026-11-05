@@ -16,6 +16,13 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 
 		// 归档
 		LinkPreset.Archive,
+
+		// 考研单词记忆
+		{
+			name: "背单词",
+			url: "/vocab/",
+			icon: "material-symbols:menu-book-rounded",
+		},
 	];
 
 	// 根据配置决定是否添加友链，在siteConfig关闭pages.friends时导航栏不显示友链

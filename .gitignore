@@ -35,5 +35,8 @@ yarn.lock
 Firefly-docs/
 
 cache/
+.cache/
+.pnpm-store/
+__pycache__/
 package/
 .obsidian/

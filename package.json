@@ -15,7 +15,9 @@
     "lint": "biome check --write ./src",
     "preinstall": "npx only-allow pnpm",
     "icons": "node scripts/generate-icons.js",
-    "lqips": "npx tsx scripts/generate-lqips.ts"
+    "lqips": "npx tsx scripts/generate-lqips.ts",
+    "vocab:fetch": "node scripts/vocab/fetch_sources.mjs",
+    "vocab:data": "node scripts/vocab/fetch_sources.mjs && python scripts/vocab/extract_exams.py && python scripts/vocab/build_data.py"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
