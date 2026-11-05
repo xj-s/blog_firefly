@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-05",
+  "source": "27考研政治一页纸·知识点手册（澄潇宇）",
+  "examDate": "2026-12-19",
+  "planStart": "2026-11-06",
+  "planEnd": "2026-12-06",
+  "pointCount": 100,
+  "pageCount": 25,
+  "cardHint": "卡面只留彩色关键词的填空，答案按原书颜色还原。",
+  "sections": [
+    {
+      "id": "mayuan",
+      "name": "马原",
+      "startPage": 11,
+      "endPage": 17,
+      "color": "#b07a2a",
+      "count": 36
+    },
+    {
+      "id": "shigang",
+      "name": "史纲",
+      "startPage": 18,
+      "endPage": 27,
+      "color": "#c25b5b",
+      "count": 44
+    },
+    {
+      "id": "maozhongte",
+      "name": "毛中特",
+      "startPage": 28,
+      "endPage": 30,
+      "color": "#8a5bb5",
+      "count": 10
+    },
+    {
+      "id": "meetings",
+      "name": "会议大观",
+      "startPage": 31,
+      "endPage": 34,
+      "color": "#5b7fb5",
+      "count": 4
+    },
+    {
+      "id": "other",
+      "name": "其他",
+      "startPage": 35,
+      "endPage": 35,
+      "color": "#3f8f6b",
+      "count": 6
+    }
+  ],
+  "cardCount": 164
+}

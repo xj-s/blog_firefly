@@ -23,6 +23,13 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 			url: "/vocab/",
 			icon: "material-symbols:menu-book-rounded",
 		},
+
+		// 考研政治背诵
+		{
+			name: "背政治",
+			url: "/politics/",
+			icon: "material-symbols:account-balance-rounded",
+		},
 	];
 
 	// 根据配置决定是否添加友链，在siteConfig关闭pages.friends时导航栏不显示友链

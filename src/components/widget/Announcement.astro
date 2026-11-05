@@ -7,8 +7,9 @@ import { i18n } from "@/i18n/translation";
 
 const config = announcementConfig;
 
-// 考研初试日期：2026年12月19日
-const examDate = new Date("2026-12-19T00:00:00+08:00");
+// 2027 考研初试：2026 年 12 月 19 日（北京时间）。
+// 只按“日历天”计算，避免用毫秒差 + Math.ceil 在晚上把天数多算一天。
+const examDateLabel = "2026年12月19日";
 
 interface Props {
 	class?: string;
@@ -35,6 +36,9 @@ const style = Astro.props.style;
         </div>
         <div class="text-xs text-neutral-500 dark:text-neutral-400">
           距离2027年考研初试还有
+        </div>
+        <div class="mt-1 text-[0.62rem] text-neutral-400 dark:text-neutral-500">
+          考试日 {examDateLabel} · 北京时间
         </div>
       </div>
     </div>
@@ -71,26 +75,48 @@ const style = Astro.props.style;
   </div>
 </WidgetLayout>
 
-<script is:inline define:vars={{ examDate: examDate.toISOString() }}>
-  function updateCountdown() {
-    const now = new Date();
-    const exam = new Date(examDate);
-    const diff = exam.getTime() - now.getTime();
+<script is:inline>
+  (() => {
+    const examDate = "2026-12-19";
+    const DAY = 86_400_000;
+    const daysEl = document.getElementById("countdown-days");
+    const labelEl = document.querySelector("#countdown-display .text-xs");
 
-    if (diff <= 0) {
-      document.getElementById("countdown-days").textContent = "0";
-      document.querySelector("#countdown-display .text-xs").textContent =
-        "考研已结束";
-      return;
+    // 用北京时间取“今天”的日历日期，再按 UTC 零点求差；
+    // 这样 23:59 和 00:01 看到的天数只跟日期有关，不会因小时数被 ceil 多算。
+    const shanghaiDate = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Asia/Shanghai",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    });
+
+    function dayNumber(dateKey) {
+      const [year, month, day] = dateKey.split("-").map(Number);
+      return Date.UTC(year, month - 1, day);
     }
 
-    const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
-    document.getElementById("countdown-days").textContent = days;
-  }
+    function updateCountdown() {
+      if (!daysEl) return;
+      const todayKey = shanghaiDate.format(new Date());
+      const days = Math.round((dayNumber(examDate) - dayNumber(todayKey)) / DAY);
 
-  // 立即更新
-  updateCountdown();
+      if (days < 0) {
+        daysEl.textContent = "0";
+        if (labelEl) labelEl.textContent = "2027 考研初试已结束";
+        return;
+      }
+      if (days === 0) {
+        daysEl.textContent = "0";
+        if (labelEl) labelEl.textContent = "今天就是考试日，稳住心态，正常发挥";
+        return;
+      }
 
-  // 每分钟更新一次
-  setInterval(updateCountdown, 60000);
+      daysEl.textContent = String(days);
+    }
+
+    updateCountdown();
+    // 跨过北京时间零点时自动更新；每分钟检查一次即可。
+    setInterval(updateCountdown, 60_000);
+  })();
 </script>

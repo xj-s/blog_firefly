@@ -38,5 +38,6 @@ cache/
 .cache/
 .pnpm-store/
 __pycache__/
+.tmp_pdf/
 package/
 .obsidian/
