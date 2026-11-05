@@ -79,8 +79,21 @@ const style = Astro.props.style;
   (() => {
     const examDate = "2026-12-19";
     const DAY = 86_400_000;
-    const daysEl = document.getElementById("countdown-days");
-    const labelEl = document.querySelector("#countdown-display .text-xs");
+    // 侧栏和移动端侧栏会各渲染一份，不能只取第一个 id。
+    const daysEls = document.querySelectorAll("#countdown-days");
+    const labelEls = document.querySelectorAll("#countdown-display .text-xs");
+
+    function setDays(text) {
+      daysEls.forEach((el) => {
+        el.textContent = text;
+      });
+    }
+
+    function setLabel(text) {
+      labelEls.forEach((el) => {
+        el.textContent = text;
+      });
+    }
 
     // 用北京时间取“今天”的日历日期，再按 UTC 零点求差；
     // 这样 23:59 和 00:01 看到的天数只跟日期有关，不会因小时数被 ceil 多算。
@@ -97,22 +110,23 @@ const style = Astro.props.style;
     }
 
     function updateCountdown() {
-      if (!daysEl) return;
+      if (!daysEls.length) return;
       const todayKey = shanghaiDate.format(new Date());
       const days = Math.round((dayNumber(examDate) - dayNumber(todayKey)) / DAY);
 
       if (days < 0) {
-        daysEl.textContent = "0";
-        if (labelEl) labelEl.textContent = "2027 考研初试已结束";
+        setDays("0");
+        setLabel("2027 考研初试已结束");
         return;
       }
       if (days === 0) {
-        daysEl.textContent = "0";
-        if (labelEl) labelEl.textContent = "今天就是考试日，稳住心态，正常发挥";
+        setDays("0");
+        setLabel("今天就是考试日，稳住心态，正常发挥");
         return;
       }
 
-      daysEl.textContent = String(days);
+      setDays(String(days));
+      setLabel("距离2027年考研初试还有");
     }
 
     updateCountdown();
